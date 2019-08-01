@@ -42,49 +42,42 @@
         }
 
         var concatenatedArray = xPoints.concat(yPoints);
+	 var myLabels = [];
 
 
-
-        let myChart = document.getElementById('myChart');//.getContext('2d');
+let myChart = document.getElementById('myChart');//.getContext('2d');
         Chart.defaults.global.defaultColor = '#000000'; 
-
-        let massPopChart = new Chart(myChart, {
-            type: 'line',
-                data: {
-                    datasets: [{label: 'Data Set', data: []}],
-                },
-                options: {
-				responsive: true,
-				title: {
-					display: true,
-					text: 'Chart.js Line Chart'
-				},
-				tooltips: {
-					mode: 'index',
-					intersect: false,
-				},
-				hover: {
-					mode: 'nearest',
-					intersect: true
-				},
-				scales: {
-					xAxes: [{
-						display: true,
-					}],
-					yAxes: [{
-						display: true,
-					}]
-				}
-			}
-		});
+	 
+       let massPopChart = new Chart(myChart, {
+  type: 'line',
+  data: {
+    labels: myLabels,
+    datasets: [{ 
+        data: [],
+        label: "Africa",
+        borderColor: "#3e95cd",
+        fill: false
+      }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'World population per region (in millions)'
+    }
+  }
+});
   
+	 
   var myData = [];
-  
+  var i = 0;
   function onLine(data) {
   console.log(data);
    myData.push(parseFloat(data));
+	  myLabels.push(i)
+	  i++;
   // debugger;
    massPopChart.data.datasets[0].data = myData;
+	  massPopChart.data.labels = myLabels;
    massPopChart.update();
 }
 
