@@ -71,7 +71,6 @@ let myChart = document.getElementById('myChart');//.getContext('2d');
   var myData = [];
   var i = 0;
 	 
-	 
   function onLine(data) {
   console.log(data);
    myData.push(parseFloat(data));
@@ -86,7 +85,7 @@ let myChart = document.getElementById('myChart');//.getContext('2d');
 var connection;
 document.getElementById("myBtn").addEventListener("click", function() {
 	myData = [];
-	nyLabels = [];
+	myLabels = [];
 	i = 0
 	 massPopChart.data.datasets[0].data = myData;
 	  massPopChart.data.labels = myLabels;
