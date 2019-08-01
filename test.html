@@ -85,6 +85,7 @@ var connection;
 document.getElementById("myBtn").addEventListener("click", function() {
 	myData = [];
 	nyLabels = [];
+	i = 0;
   if (connection) {
     connection.close();
     connection = undefined;
