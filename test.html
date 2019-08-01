@@ -54,25 +54,37 @@
                     datasets: [{label: 'Data Set', data: []}],
                 },
                 options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                max: 1000,
-                                min: 0,
-                                beginAtZero:true
-                            },
-                        }],
-                     xAxes: [{
-                            ticks: {
-                                 max:  1500,
-                                min: 0,
-                                beginAtZero:true
-                            },
-                        }]
-
-                    }
-                }       
-        });
+				responsive: true,
+				title: {
+					display: true,
+					text: 'Chart.js Line Chart'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Value'
+						}
+					}]
+				}
+			}
+		};
   
   var myData = [];
   
