@@ -49,9 +49,9 @@
         Chart.defaults.global.defaultColor = '#000000'; 
 
         let massPopChart = new Chart(myChart, {
-            type: 'scatter',
+            type: 'line',
                 data: {
-                    datasets: [{label: 'Data Set', data: storage}],
+                    datasets: [{label: 'Data Set', data: []}],
                 },
                 options: {
                     scales: {
