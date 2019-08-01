@@ -5,14 +5,16 @@
   <script src="https://www.puck-js.com/puck.js"></script>
   <button onclick="Puck.write("\x10exportData()\n");">On!</button>
   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
+  <button id="myBtn">Try it</button>
  
  <script>
+  
   function onLine(data) {
   // CSV data is received here
 }
 
 var connection;
-button.addEventListener("click", function() {
+document.getElementById("myBtn").addEventListener("click", function() {
   if (connection) {
     connection.close();
     connection = undefined;
