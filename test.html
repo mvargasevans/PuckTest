@@ -72,6 +72,7 @@
   function onLine(data) {
   console.log(data);
    myData.push(data);
+   debugger();
    massPopChart.data.datasets[0] = myData;
    massPopChart.update();
 }
