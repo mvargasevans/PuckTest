@@ -83,6 +83,8 @@ let myChart = document.getElementById('myChart');//.getContext('2d');
 
 var connection;
 document.getElementById("myBtn").addEventListener("click", function() {
+	myData = [];
+	nyLabels = [];
   if (connection) {
     connection.close();
     connection = undefined;
