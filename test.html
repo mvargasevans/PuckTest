@@ -93,7 +93,7 @@ document.getElementById("myBtn").addEventListener("click", function() {
 	 
 	 function download_csv() {
     var csv = 'Name,Title\n';
-    data.forEach(function(row) {
+    myData.forEach(function(row) {
             csv += row.join(',');
             csv += "\n";
     });
