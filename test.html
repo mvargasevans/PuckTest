@@ -8,6 +8,7 @@
   <button onclick="Puck.write("\x10sendData()\n");">On!</button>
   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
   <button id="myBtn">Try it</button>
+	 
 	 <a href='#' 
         onclick='downloadCSV({ filename: "stock-data.csv" });'
     >Download CSV</a>
@@ -126,7 +127,7 @@ document.getElementById("myBtn").addEventListener("click", function() {
 	 function downloadCSV(args) {  
         var data, filename, link;
         var csv = convertArrayOfObjectsToCSV({
-            data: stockData
+            data: myData
         });
         if (csv == null) return;
 
