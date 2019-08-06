@@ -3,59 +3,19 @@
  </head>
  <body>
   <script src="https://www.puck-js.com/puck.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
   <button onclick="Puck.write("\x10sendData()\n");">On!</button>
   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
   <button id="myBtn">Try it</button>
   
-  <div class = "container">
-        <canvas id="myChart"></canvas>
-    </div>
- <script>
-  var myLabels = [];
-
-
-let myChart = document.getElementById('myChart');//.getContext('2d');
-        Chart.defaults.global.defaultColor = '#000000'; 
-	 
-       let massPopChart = new Chart(myChart, {
-  type: 'line',
-  data: {
-    labels: myLabels,
-    datasets: [{ 
-        data: [],
-        label: "Ruuvitag at 100 Hz",
-        borderColor: "#3e95cd",
-        fill: false
-      }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'Vibration'
-    }
-  }
-});
   
-	 
+ <script> 
   var myData = [];
   var i = 0;
 	 
   function onLine(data) {
   console.log(data);
-	  
-	  
-  /* myData.push(parseFloat(data));
-	  myLabels.push(i)
-	  i++;
-	  if (i == 1500) {
-	download_csv(myData);
-	  }
-  // debugger;
-   massPopChart.data.datasets[0].data = myData;
-	  massPopChart.data.labels = myLabels;
-   massPopChart.update();*/
 }
 
 var connection;
@@ -92,16 +52,6 @@ document.getElementById("myBtn").addEventListener("click", function() {
     connection.write("\x10sendData()\n");
   });
 });
-	 
-	 function download_csv() {
-    var csv = myData.join();
- 
-    console.log(csv);
-    var hiddenElement = document.createElement('a');
-    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-    hiddenElement.target = '_blank';
-    hiddenElement.download = 'people.csv';
-    hiddenElement.click();
 }
 	 
   </script>
