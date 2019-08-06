@@ -21,11 +21,7 @@
 var connection;
 document.getElementById("myBtn").addEventListener("click", function() {
 	myData = [];
-	myLabels = [];
-	i = 0
-	 massPopChart.data.datasets[0].data = myData;
-	  massPopChart.data.labels = myLabels;
-   massPopChart.update();
+	i = 0;
   if (connection) {
     connection.close();
     connection = undefined;
