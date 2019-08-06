@@ -26,7 +26,7 @@ influxdb = new InfluxDB({
 	 
   function onLine(data) {
   console.log(data);
-writePoint("acc", data);
+influxdb.writePoint("acc", data);
 }
 
 var connection;
