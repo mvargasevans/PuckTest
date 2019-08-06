@@ -12,21 +12,22 @@
   
   
  <script> 
-	  
+
+	  /*
 influxdb = new InfluxDB({
   "host" :"localhost",
   "port" :"8086",
   "username" :"",
   "password" :"",
   "database" :"ruuvi"
-});
+});*/
 	
   var myData = [];
   var i = 0;
 	 
   function onLine(data) {
   console.log(data);
-influxdb.writePoint("acc", data);
+//influxdb.writePoint("acc", data);
 }
 
 var connection;
