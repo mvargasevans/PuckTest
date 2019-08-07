@@ -14,10 +14,18 @@
 
   var myData = [];
   var i = 0;
+	 influxdb = new InfluxDB({
+  "host" :"localhost",
+  "port" :"8086",
+  "username" :"",
+  "password" :"",
+  "database" :"ruuvi"
+});
 	 console.log("Starting")
 	 
   function onLine(data) {
-  console.log(data);
+	  influxdb.writePoint("acc", data);
+  //console.log(data);
 }
 
 var connection;
