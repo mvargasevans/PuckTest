@@ -4,7 +4,7 @@
  <body>
   <script src="https://www.puck-js.com/puck.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-	 <script type="text/javascript" src="http://get.influxdb.org/influxdb-latest.js"></script>
+	 <script type="text/javascript" src="https://github.com/boynet/Influxdb-js-client/blob/master/influxdb.min.js"></script>
 
   <button onclick="Puck.write("\x10sendData()\n");">On!</button>
   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
@@ -14,6 +14,7 @@
 
   var myData = [];
   var i = 0;
+	 /*
 	 influxdb = new InfluxDB({
   "host" :"localhost",
   "port" :"8086",
@@ -21,6 +22,10 @@
   "password" :"",
   "database" :"ruuvi"
 });
+*/
+	 
+	influxdb = new Influxdb('http://localhost:8086/write?db=ruuvi',true);
+	 
 	 console.log("Starting")
 	 
   function onLine(data) {
